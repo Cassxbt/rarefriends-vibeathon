@@ -4,7 +4,7 @@ Your Rare Friend gathers what it really earns, in its own on-chain world.
 
 **Builder:** cassxbt · GitHub [@Cassxbt](https://github.com/Cassxbt) · X [@cassxbt](https://x.com/cassxbt) · **Category:** Character Spotlight · **SDK:** FriendSDK v0.1.4
 
-**Play:** **[rarefriends-forage.vercel.app](https://rarefriends-forage.vercel.app)** · [Source](https://github.com/Cassxbt/rarefriends-forage/tree/ce8309c) · [Full README](https://github.com/Cassxbt/rarefriends-forage/blob/ce8309c/README.md) · [Game rules](https://github.com/Cassxbt/rarefriends-forage/blob/ce8309c/game/game.json)
+**Play:** **[rarefriends-forage.vercel.app](https://rarefriends-forage.vercel.app)** · [Source](https://github.com/Cassxbt/rarefriends-forage/tree/7a5db19) · [Full README](https://github.com/Cassxbt/rarefriends-forage/blob/7a5db19/README.md) · [Game rules](https://github.com/Cassxbt/rarefriends-forage/blob/7a5db19/game/game.json)
 
 Forage turns the selected Generations Friend's real on-chain life into the level. Its **Scenery** trait picks its world, its **real unclaimed RF** (`ActivationManager.earned`) is laid out as pickups it gathers, new pickups appear only when a chain read shows it earned more, and its **Memory wall** replays its own `Transfer` and `Activated` events with transaction hashes. Take the Friend away and there is no level: no world, no ground, no history.
 
@@ -15,7 +15,7 @@ Needs a browser wallet holding a hardwired Generations NFT (generation ≥ 1) on
 ```sh
 git clone https://github.com/Cassxbt/rarefriends-forage.git
 cd rarefriends-forage
-git checkout ce8309c
+git checkout 7a5db19
 npm ci
 npm run dev        # http://127.0.0.1:4173
 ```
@@ -25,6 +25,7 @@ npm run dev        # http://127.0.0.1:4173
 Move with WASD, arrow keys or tap. Walk into glowing pickups; they stack above your Friend's head. Press E at a station:
 
 - **Den:** bring what you carry home; read the Memory wall (real milestones with copyable explorer URLs, then this session's trips, labelled as session-only).
+- **Homecoming:** after the first trip, hang one of the Friend's real milestones in the Den. It hangs there as a keepsake and the Friend answers in its family's voice with the real title and block (session only, and labelled so).
 - **Treat stand:** buy and crack treats; keep a snack for magnet pull or redeem it.
 - **Proof board:** each financial value with the contract call behind it, all from one snapshot at the block shown.
 
@@ -49,8 +50,8 @@ Expected value **0.875 RF** per treat (12.5% edge). Base pull 20, up to +60 from
 
 ## Checks, credits and limitations
 
-All pass at the pinned commit, locally and in [CI](https://github.com/Cassxbt/rarefriends-forage/actions/runs/36761048210): `npm test` (37 unit and world tests), `npm run typecheck`, `npm run check` (FriendSDK game validation), `npm run build`, and `npm run test:browser` (9 end-to-end runs of the real SDK runtime in headless Chromium with the SDK's wallet fixture and Forage's chain reads mocked: claims, resting and waking, a delayed read, an outage, ownership history, the golden spark, a Den trip, treat keep and redeem, First Forage with an exact receipt, and a claim mid-journey). `npm run test:live` reads Friend #93858's real state, world and history from mainnet. The README screenshots are the hosted preview with #93858's real chain data.
+All pass at the pinned commit in [CI](https://github.com/Cassxbt/rarefriends-forage/actions/runs/36770349924): `npm test` (38 unit and world tests), `npm run typecheck`, `npm run check` (FriendSDK game validation), `npm run build`, and `npm run test:browser` (9 end-to-end runs of the real SDK runtime in headless Chromium with the SDK's wallet fixture and Forage's chain reads mocked: claims, resting and waking, a delayed read, an outage, ownership history, the golden spark, a Den trip and a Homecoming keepsake, treat keep and redeem, First Forage with an exact receipt, and a claim mid-journey). `npm run test:live` reads Friend #93858's real state, world and history from mainnet. The README screenshots are the hosted preview with #93858's real chain data.
 
-Uses FriendSDK 0.1.4's runtime, worlds, character sprites and sound kit (Apache-2.0); see [NOTICE](https://github.com/Cassxbt/rarefriends-forage/blob/ce8309c/NOTICE.md). Forage's code is MIT.
+Uses FriendSDK 0.1.4's runtime, worlds, character sprites and sound kit (Apache-2.0); see [NOTICE](https://github.com/Cassxbt/rarefriends-forage/blob/7a5db19/NOTICE.md). Forage's code is MIT.
 
 Trips, treats and the receipt reset on reload (the sandbox has no storage; the game labels them session-only). The golden spark's 12 seconds count active play; menus pause it. The Memory wall shows up to four ownership moves and says when it stops early. Tested on desktop Chrome. No live token spending, trading or contract deployment is included; Token Activity metrics are not claimed.
